@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天坛额枋：木结构的“承重纽带”与建筑美学载体</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B0000',
+                        secondary: '#5A4B38',
+                        paper: '#FCFAF5',
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif SC', 'serif'],
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .section-line {
+                height: 1px;
+                background: linear-gradient(90deg, transparent, #8B000033, transparent);
+            }
+        }
+    </style>
+</head>
+<body class="bg-paper min-h-screen">
+    <!-- 页面容器 -->
+    <div class="container mx-auto px-4 md:px-8 max-w-3xl py-12">
+        <!-- 标题区域 -->
+        <header class="mb-12 text-center">
+            <h1 class="text-[clamp(1.8rem,5vw,2.5rem)] font-serif font-bold text-primary leading-tight mb-4">
+                天坛额枋：木结构的“承重纽带”与建筑美学载体
+            </h1>
+            <div class="section-line w-32 mx-auto"></div>
+        </header>
+
+        <!-- 主要内容 -->
+        <main class="text-secondary text-lg leading-relaxed space-y-8">
+            <p class="font-serif">
+                天坛古建筑群中，额枋是连接木柱、稳定框架的核心木结构组件，以祈年殿的额枋最具代表性，兼具功能性与文化艺术性。
+            </p>
+
+            <div class="section-line my-6"></div>
+
+            <section>
+                <h2 class="text-xl font-serif font-semibold text-primary mb-4">结构功能</h2>
+                <p>
+                    从结构功能看，额枋横向串联柱子，形成稳固的木构框架，防止柱体偏移。祈年殿额枋分多个层级：大额枋、小额枋与由额垫板共同构成柱间横向支撑，其中连接檐柱与金柱的“峨眉穿插枋”尤为特殊，需经人工弯曲处理，上层额枋弯曲度最大，适配殿宇圆形攒尖顶的弧度，与柱子、斗拱协同传递屋顶荷载。此外，金柱与钻金柱间的随梁、扒梁等枋类构件，进一步强化了内部结构的承重能力，是祈年殿“无钉无铆却稳固千年”的关键之一。
+                </p>
+            </section>
+
+            <div class="section-line my-6"></div>
+
+            <section>
+                <h2 class="text-xl font-serif font-semibold text-primary mb-4">工艺与文化</h2>
+                <p>
+                    从工艺与文化看，天坛额枋表面多饰青绿彩画，绘有和玺彩画或旋子彩画，图案以龙纹、云纹为主，既保护木材免受虫蛀腐朽，又彰显皇家祭祀建筑的等级威严。额枋的尺寸、弧度与彩绘纹样，均遵循明清建筑规制，其制作需精准测算木材纹理与受力方向，体现了古代工匠对材料特性的深刻理解，也承载着中国传统建筑“材美工巧”的造物理念，是天坛木结构技艺与文化内涵的重要体现。
+                </p>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="mt-16 pt-8 border-t border-primary/10 text-center text-sm text-secondary/70">
+            <p>© 天坛建筑文化研究 | 传统建筑构件解析</p>
+        </footer>
+    </div>
+
+    <!-- 简单的交互效果 -->
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 内容渐入效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('main > p, main > section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, 100 + (index * 100));
+            });
+        });
+    </script>
+</body>
+</html>
+    
